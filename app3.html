@@ -1,0 +1,2804 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GamerHub</title>
+
+<link rel="stylesheet" href="app3.css">
+</head>
+
+<body>
+
+<!-- =========================
+     WELCOME
+========================= -->
+
+<div id="welcomeScreen">
+
+    <div class="welcome-content">
+
+        <span class="welcome-small">
+            WELCOME TO
+        </span>
+
+        <h1>
+            GAMER<span>HUB</span>
+        </h1>
+
+        <p>
+            PLAY · COMPETE · IMPROVE
+        </p>
+
+    </div>
+
+</div>
+
+
+<!-- =========================
+     NAVBAR
+========================= -->
+
+<nav class="navbar">
+
+    <a href="#home" class="logo">
+        GAMER<span>HUB</span>
+    </a>
+
+    <div class="nav-actions">
+
+        <!-- THEME -->
+
+        <button
+            class="icon-btn"
+            id="themeBtn"
+            aria-label="Theme"
+        >
+
+            <svg
+                id="themeIcon"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+            >
+                <path
+                    d="M21 12.79A9 9 0 1 1 11.21 3
+                       7 7 0 0 0 21 12.79Z"
+                />
+            </svg>
+
+        </button>
+
+
+        <!-- ACCOUNT -->
+
+        <div class="account-wrapper">
+
+            <button
+                class="icon-btn"
+                id="accountBtn"
+            >
+
+                <svg
+                    id="accountIcon"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                >
+                    <circle
+                        cx="12"
+                        cy="8"
+                        r="4"
+                    />
+
+                    <path
+                        d="M4 21c0-4 3.5-7 8-7
+                           s8 3 8 7"
+                    />
+                </svg>
+
+            </button>
+
+
+            <div
+                class="account-menu"
+                id="accountMenu"
+            >
+
+                <div class="account-head">
+
+                    <div
+                        class="account-name"
+                        id="accountName"
+                    >
+                        Guest
+                    </div>
+
+                    <div
+                        class="account-status"
+                        id="accountStatus"
+                    >
+                        No account added
+                    </div>
+
+                </div>
+
+
+                <div class="account-buttons">
+
+                    <button id="accountAction">
+                        Create Account
+                    </button>
+
+                    <button id="accountProfileButton">
+                        🎮 My Gaming Profile
+                    </button>
+
+                    <button
+                        onclick="scrollToFriends()"
+                    >
+                        👥 Friends
+                    </button>
+
+                    <button
+                        onclick="scrollToGroups()"
+                    >
+                        👥 My Groups
+                    </button>
+
+                    <button
+                        onclick="showFavoriteGames()"
+                    >
+                        ★ Favorite Games
+                    </button>
+
+                </div>
+
+
+                <div
+                    class="friends-preview"
+                    id="friendsPreview"
+                ></div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</nav>
+
+
+<!-- =========================
+     HERO
+========================= -->
+
+<section
+    class="hero"
+    id="home"
+>
+
+    <div class="section-inner">
+
+        <div class="hero-content">
+
+            <div class="hero-label">
+                YOUR GAMING JOURNEY
+            </div>
+
+            <h1>
+                PLAY.<br>
+                <span>COMPETE.</span><br>
+                BECOME BETTER.
+            </h1>
+
+            <p>
+                Choose your favorite games, upload your best
+                clips, show off your rank and score, create
+                groups, add friends, challenge your community,
+                and compete in whatever game you love.
+            </p>
+
+            <div class="hero-buttons">
+
+                <a
+                    href="#games"
+                    class="primary-btn"
+                >
+                    Explore Games
+                </a>
+
+                <a
+                    href="#groups"
+                    class="secondary-btn"
+                >
+                    Create a Group
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     GAMES
+========================= -->
+
+<section
+    class="games-section"
+    id="games"
+>
+
+    <div class="section-inner">
+
+        <div class="games-top">
+
+            <h2 class="section-title">
+                Choose Your Games
+            </h2>
+
+            <p class="section-description">
+                Choose the games you love, mark them as favorites,
+                see where you can play them, share them with friends,
+                and upload your best gaming clips.
+            </p>
+
+            <div
+                class="game-count"
+                id="gameCount"
+            >
+                100 games
+            </div>
+
+        </div>
+
+
+        <!-- SEARCH -->
+
+        <div class="toolbar">
+
+            <div class="search-box">
+
+                <span class="search-icon">
+
+                    <svg
+                        width="18"
+                        height="18"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                    >
+                        <circle
+                            cx="11"
+                            cy="11"
+                            r="7"
+                        />
+
+                        <path
+                            d="m20 20-4-4"
+                        />
+                    </svg>
+
+                </span>
+
+                <input
+                    id="searchInput"
+                    type="text"
+                    placeholder="Search games..."
+                >
+
+            </div>
+
+
+            <select
+                class="category-select"
+                id="categoryFilter"
+            >
+
+                <option value="all">
+                    All Categories
+                </option>
+
+                <option value="FPS">
+                    FPS / PvP
+                </option>
+
+                <option value="MOBA">
+                    MOBA / Strategy
+                </option>
+
+                <option value="Fighting">
+                    Fighting
+                </option>
+
+                <option value="Sports">
+                    Sports / Racing
+                </option>
+
+            </select>
+
+        </div>
+
+
+        <!-- FAVORITES -->
+
+        <div class="favorites-bar">
+
+            <div class="favorites-left">
+
+                <div class="favorite-big">
+                    ★
+                </div>
+
+                <div class="favorites-text">
+
+                    <strong>
+                        Favorite Games
+                    </strong>
+
+                    <span id="favoriteCount">
+                        0 favorite games
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <button
+                class="show-favorites"
+                id="favoriteFilterBtn"
+            >
+                Show Favorites
+            </button>
+
+        </div>
+
+
+        <!-- GAMES -->
+
+        <div
+            class="game-grid"
+            id="gameGrid"
+        ></div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     GROUPS
+========================= -->
+
+<section
+    class="groups-section"
+    id="groups"
+>
+
+    <div class="section-inner">
+
+        <div class="groups-header">
+
+            <div>
+
+                <div class="hero-label">
+                    COMMUNITY
+                </div>
+
+                <h2 class="section-title">
+                    Your Groups
+                </h2>
+
+                <p class="section-description">
+                    Create groups with your friends, build your
+                    gaming team, share games, and compete together.
+                </p>
+
+            </div>
+
+
+            <button
+                class="create-group-btn"
+                id="createGroupBtn"
+            >
+                + Create Group
+            </button>
+
+        </div>
+
+
+        <div
+            class="groups-grid"
+            id="groupsGrid"
+        ></div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     FRIENDS
+========================= -->
+
+<section
+    class="friends-section"
+    id="friends"
+>
+
+    <div class="section-inner">
+
+        <div class="hero-label">
+            YOUR FRIENDS
+        </div>
+
+        <h2 class="section-title">
+            Friends
+        </h2>
+
+        <p class="section-description">
+            Add your friends and keep your gaming community
+            together in one place.
+        </p>
+
+
+        <div class="friends-layout">
+
+            <!-- ADD FRIEND -->
+
+            <div class="friends-panel">
+
+                <h3>
+                    Add a Friend
+                </h3>
+
+                <div class="friend-input">
+
+                    <input
+                        id="friendInput"
+                        type="text"
+                        placeholder="Enter gaming name..."
+                    >
+
+                    <button
+                        id="addFriendBtn"
+                    >
+                        Add
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <!-- FRIEND LIST -->
+
+            <div class="friends-panel">
+
+                <h3>
+                    Your Friends
+                </h3>
+
+                <div
+                    class="friend-list"
+                    id="friendList"
+                ></div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     GAMING PROFILE
+========================= -->
+
+<section class="profile-section" id="profile">
+
+    <div class="section-inner">
+
+        <div class="hero-label">YOUR GAMING PROFILE</div>
+
+        <h2 class="section-title">Your Games. Your Stats.</h2>
+
+        <p class="section-description">
+            Connect your gaming platforms and your profile can show your
+            connected games, playtime and ranks. The buttons below are
+            ready for real OAuth/API integration; this standalone file
+            uses local demo data until a backend is connected.
+        </p>
+
+        <div class="profile-layout">
+
+            <div class="profile-card">
+
+                <div class="profile-avatar" id="profileAvatar">G</div>
+
+                <h3 id="profileDisplayName">Guest</h3>
+
+                <div class="profile-email" id="profileDisplayEmail">
+                    Create an account to build your profile.
+                </div>
+
+                <div class="profile-account-state" id="profileAccountState">
+                    No GamerHub account is connected.
+                </div>
+
+                <div class="platform-connect-title">
+                    Connect your gaming accounts
+                </div>
+
+                <div class="platform-connect-grid">
+
+                    <button class="platform-connect-btn" data-connect="Steam">
+                        Steam
+                    </button>
+
+                    <button class="platform-connect-btn" data-connect="Epic Games">
+                        Epic Games
+                    </button>
+
+                    <button class="platform-connect-btn" data-connect="Riot Games">
+                        Riot Games
+                    </button>
+
+                    <button class="platform-connect-btn" data-connect="Xbox">
+                        Xbox
+                    </button>
+
+                    <button class="platform-connect-btn" data-connect="PlayStation">
+                        PlayStation
+                    </button>
+
+                    <button class="platform-connect-btn" data-connect="Discord">
+                        Discord
+                    </button>
+
+                </div>
+
+            </div>
+
+            <div class="connected-card">
+
+                <div class="connected-header">
+                    <div>
+                        <h3>Connected Library</h3>
+                        <p>Games, playtime and available rank data.</p>
+                    </div>
+                    <div class="connection-count" id="connectionCount">0 connected</div>
+                </div>
+
+                <div class="connected-platforms" id="connectedPlatforms"></div>
+
+                <div class="profile-library" id="profileLibrary"></div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     COMMUNITY FEATURES
+========================= -->
+
+<section class="community">
+
+    <div class="section-inner">
+
+        <div class="hero-label">
+            YOUR COMMUNITY
+        </div>
+
+        <h2 class="section-title">
+            More Than Just Games.
+        </h2>
+
+        <p class="section-description">
+            Your gaming profile can become your own place
+            to show your games, friends, groups, clips,
+            achievements, rank and score.
+        </p>
+
+
+        <div class="community-grid">
+
+            <div class="feature-card">
+
+                <div class="feature-number">
+                    01
+                </div>
+
+                <h3>
+                    Your Profile
+                </h3>
+
+                <p>
+                    Show your favorite games, rank, score
+                    and achievements.
+                </p>
+
+            </div>
+
+
+            <div class="feature-card">
+
+                <div class="feature-number">
+                    02
+                </div>
+
+                <h3>
+                    Your Clips
+                </h3>
+
+                <p>
+                    Select your best gaming moments and
+                    build your personal clip collection.
+                </p>
+
+            </div>
+
+
+            <div class="feature-card">
+
+                <div class="feature-number">
+                    03
+                </div>
+
+                <h3>
+                    Your Community
+                </h3>
+
+                <p>
+                    Add friends, create groups and share
+                    your favorite games together.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     GAMERHUB ACCOUNT MODAL
+========================= -->
+
+<div class="modal" id="accountModal">
+
+    <div class="modal-box">
+
+        <h2>Create your GamerHub account</h2>
+
+        <p>
+            Your username is unique. Another GamerHub account cannot use it.
+        </p>
+
+        <input
+            id="accountUsernameInput"
+            type="text"
+            maxlength="24"
+            autocomplete="username"
+            placeholder="Username"
+        >
+
+        <div class="account-form-status" id="usernameCheck"></div>
+
+        <input
+            id="accountEmailInput"
+            type="email"
+            autocomplete="email"
+            placeholder="Email"
+        >
+
+        <input
+            id="accountPasswordInput"
+            type="password"
+            autocomplete="new-password"
+            placeholder="Password"
+        >
+
+        <div class="account-form-status" id="accountFormStatus"></div>
+
+        <div class="modal-actions">
+
+            <button class="modal-cancel" id="closeAccountModal">
+                Cancel
+            </button>
+
+            <button class="modal-create" id="createGamerAccount">
+                Create Account
+            </button>
+
+        </div>
+
+        <button class="google-account-btn" id="googleAccountBtn">
+            Continue with Google
+        </button>
+
+        <div class="account-modal-note">
+            Demo mode: this HTML file keeps account data in this browser.
+            Real global username uniqueness, Google sign-in, Steam/Epic OAuth,
+            and automatic live game statistics require a secure backend.
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- =========================
+     GROUP MODAL
+========================= -->
+
+<div
+    class="modal"
+    id="groupModal"
+>
+
+    <div class="modal-box">
+
+        <h2>
+            Create a Group
+        </h2>
+
+        <p>
+            Give your gaming group a name.
+        </p>
+
+        <input
+            id="groupNameInput"
+            type="text"
+            maxlength="30"
+            placeholder="Example: Dark Warriors"
+        >
+
+        <div class="modal-actions">
+
+            <button
+                class="modal-cancel"
+                id="closeGroupModal"
+            >
+                Cancel
+            </button>
+
+            <button
+                class="modal-create"
+                id="saveGroupBtn"
+            >
+                Create Group
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- =========================
+     HIDDEN CLIP INPUT
+========================= -->
+
+<input
+    type="file"
+    id="clipInput"
+    accept="video/*"
+    hidden
+>
+
+
+<!-- =========================
+     TOAST
+========================= -->
+
+<div
+    class="toast"
+    id="toast"
+></div>
+
+
+<!-- =========================
+     FOOTER
+========================= -->
+
+<footer>
+
+    <div class="footer-inner">
+
+        <span>
+            © 2026 GAMERHUB
+        </span>
+
+        <span>
+            PLAY · COMPETE · SHARE
+        </span>
+
+    </div>
+
+</footer>
+
+
+<script>
+
+/* =====================================================
+   100 GAMES
+===================================================== */
+
+const games = [
+
+/* FPS / PVP */
+
+["Counter-Strike 2","FPS",["PC"],"CS"],
+["Valorant","FPS",["PC"],"VA"],
+["Fortnite","FPS",["PC","PlayStation","Xbox","Switch","Mobile"],"FN"],
+["PUBG: Battlegrounds","FPS",["PC","PlayStation","Xbox"],"PUBG"],
+["Apex Legends","FPS",["PC","PlayStation","Xbox","Switch"],"AP"],
+["Call of Duty: Warzone","FPS",["PC","PlayStation","Xbox"],"WZ"],
+["Rainbow Six Siege","FPS",["PC","PlayStation","Xbox"],"R6"],
+["Overwatch 2","FPS",["PC","PlayStation","Xbox","Switch"],"OW"],
+["Marvel Rivals","FPS",["PC","PlayStation","Xbox"],"MR"],
+["Garena Free Fire","FPS",["Mobile"],"FF"],
+["PUBG Mobile","FPS",["Mobile"],"PM"],
+["Call of Duty: Modern Warfare III","FPS",["PC","PlayStation","Xbox"],"MW"],
+["The Finals","FPS",["PC","PlayStation","Xbox"],"TF"],
+["Destiny 2","FPS",["PC","PlayStation","Xbox"],"D2"],
+["Deadlock","FPS",["PC"],"DL"],
+["Escape from Tarkov Arena","FPS",["PC"],"TA"],
+["Team Fortress 2","FPS",["PC"],"TF2"],
+["Hunt: Showdown","FPS",["PC","PlayStation","Xbox"],"HS"],
+["Rust","FPS",["PC","PlayStation","Xbox"],"RU"],
+["DayZ","FPS",["PC","PlayStation","Xbox"],"DZ"],
+["Halo Infinite","FPS",["PC","Xbox"],"HI"],
+["Battlefield 2042","FPS",["PC","PlayStation","Xbox"],"BF"],
+["Call of Duty: Mobile","FPS",["Mobile"],"CM"],
+["Arena Breakout: Infinite","FPS",["PC"],"AB"],
+["Delta Force","FPS",["PC","PlayStation","Xbox","Mobile"],"DF"],
+["Quake Champions","FPS",["PC"],"QC"],
+["Splitgate 2","FPS",["PC","PlayStation","Xbox"],"SG"],
+["Left 4 Dead 2","FPS",["PC"],"L4"],
+["XDefiant","FPS",["PC","PlayStation","Xbox"],"XD"],
+["Insurgency: Sandstorm","FPS",["PC","PlayStation","Xbox"],"IS"],
+
+/* MOBA / STRATEGY */
+
+["League of Legends","MOBA",["PC"],"LOL"],
+["Dota 2","MOBA",["PC"],"D2"],
+["Mobile Legends: Bang Bang","MOBA",["Mobile"],"ML"],
+["Honor of Kings","MOBA",["Mobile"],"HK"],
+["Teamfight Tactics","MOBA",["PC","Mobile"],"TFT"],
+["League of Legends: Wild Rift","MOBA",["Mobile"],"WR"],
+["Pokemon Unite","MOBA",["Switch","Mobile"],"PU"],
+["Smite 2","MOBA",["PC","PlayStation","Xbox"],"S2"],
+["Chess.com","MOBA",["PC","Mobile"],"CH"],
+["StarCraft II","MOBA",["PC"],"SC"],
+["Age of Empires II: Definitive Edition","MOBA",["PC","Xbox"],"AO2"],
+["Clash Royale","MOBA",["Mobile"],"CR"],
+["Clash of Clans","MOBA",["Mobile"],"COC"],
+["Brawl Stars","MOBA",["Mobile"],"BS"],
+["Warcraft III: Reforged","MOBA",["PC"],"WC"],
+["Hearthstone","MOBA",["PC","Mobile"],"HS"],
+["Magic: The Gathering Arena","MOBA",["PC","Mobile"],"MTG"],
+["Yu-Gi-Oh! Master Duel","MOBA",["PC","PlayStation","Xbox","Switch","Mobile"],"YG"],
+["Legends of Runeterra","MOBA",["PC","Mobile"],"LR"],
+["Marvel Snap","MOBA",["PC","Mobile"],"MS"],
+["StarCraft: Brood War","MOBA",["PC"],"BW"],
+["Age of Empires IV","MOBA",["PC","Xbox"],"AO4"],
+["Civilization VI","MOBA",["PC","PlayStation","Xbox","Switch","Mobile"],"C6"],
+["Total War: Warhammer III","MOBA",["PC"],"TW"],
+["Stormgate","MOBA",["PC"],"ST"],
+["MechWarrior Online","MOBA",["PC"],"MW"],
+["Auto Chess","MOBA",["PC","Mobile"],"AC"],
+["Dota Underlords","MOBA",["PC","Mobile"],"DU"],
+["Bloons TD 6","MOBA",["PC","Mobile","Switch"],"BT"],
+["Minecraft","MOBA",["PC","PlayStation","Xbox","Switch","Mobile"],"MC"],
+
+/* FIGHTING */
+
+["Street Fighter 6","Fighting",["PC","PlayStation","Xbox"],"SF"],
+["Tekken 8","Fighting",["PC","PlayStation","Xbox"],"T8"],
+["Super Smash Bros. Ultimate","Fighting",["Switch"],"SS"],
+["Guilty Gear -Strive-","Fighting",["PC","PlayStation","Xbox"],"GG"],
+["MultiVersus","Fighting",["PC","PlayStation","Xbox"],"MV"],
+["Mortal Kombat 1","Fighting",["PC","PlayStation","Xbox","Switch"],"MK"],
+["Dragon Ball FighterZ","Fighting",["PC","PlayStation","Xbox","Switch"],"DB"],
+["Super Smash Bros. Melee","Fighting",["GameCube"],"SM"],
+["Brawlhalla","Fighting",["PC","PlayStation","Xbox","Switch","Mobile"],"BR"],
+["Granblue Fantasy Versus: Rising","Fighting",["PC","PlayStation"],"GB"],
+["Under Night In-Birth II Sys:Celes","Fighting",["PC","PlayStation","Switch"],"UN"],
+["BlazBlue: Central Fiction","Fighting",["PC","PlayStation","Switch"],"BB"],
+["For Honor","Fighting",["PC","PlayStation","Xbox"],"FH"],
+["Chivalry 2","Fighting",["PC","PlayStation","Xbox"],"CH"],
+["Naraka: Bladepoint","Fighting",["PC","PlayStation","Xbox","Switch"],"NB"],
+["Ultimate Marvel vs. Capcom 3","Fighting",["PC","PlayStation","Xbox","Switch"],"UM"],
+["Soulcalibur VI","Fighting",["PC","PlayStation","Xbox"],"SC"],
+["Killer Instinct","Fighting",["PC","Xbox"],"KI"],
+["Skullgirls","Fighting",["PC","PlayStation","Xbox","Switch"],"SK"],
+["Nickelodeon All-Star Brawl 2","Fighting",["PC","PlayStation","Xbox","Switch"],"NA"],
+
+/* SPORTS / RACING */
+
+["Rocket League","Sports",["PC","PlayStation","Xbox","Switch"],"RL"],
+["EA Sports FC 26","Sports",["PC","PlayStation","Xbox","Switch"],"FC"],
+["NBA 2K26","Sports",["PC","PlayStation","Xbox"],"NBA"],
+["Madden NFL 26","Sports",["PC","PlayStation","Xbox"],"M26"],
+["iRacing","Sports",["PC"],"IR"],
+["Gran Turismo 7","Sports",["PlayStation"],"GT"],
+["F1 25","Sports",["PC","PlayStation","Xbox"],"F1"],
+["Assetto Corsa Competizione","Sports",["PC","PlayStation","Xbox"],"AC"],
+["Trackmania","Sports",["PC","PlayStation","Xbox"],"TM"],
+["MLB The Show 25","Sports",["PlayStation","Xbox","Switch"],"MLB"],
+["UFC 5","Sports",["PlayStation","Xbox"],"UFC"],
+["WWE 2K26","Sports",["PC","PlayStation","Xbox"],"WWE"],
+["World of Tanks","Sports",["PC","PlayStation","Xbox"],"WOT"],
+["World of Warships","Sports",["PC","PlayStation","Xbox"],"WOW"],
+["War Thunder","Sports",["PC","PlayStation","Xbox"],"WT"],
+["rFactor 2","Sports",["PC"],"RF"],
+["EA Sports FC Mobile","Sports",["Mobile"],"FCM"],
+["Mario Kart 8 Deluxe","Sports",["Switch"],"MK8"],
+["Riders Republic","Sports",["PC","PlayStation","Xbox"],"RR"],
+["Grid Legends","Sports",["PC","PlayStation","Xbox","Switch"],"GL"]
+
+];
+
+
+/* =====================================================
+   VARIABLES
+===================================================== */
+
+const gameGrid =
+    document.getElementById("gameGrid");
+
+const searchInput =
+    document.getElementById("searchInput");
+
+const categoryFilter =
+    document.getElementById("categoryFilter");
+
+const gameCount =
+    document.getElementById("gameCount");
+
+const favoriteCount =
+    document.getElementById("favoriteCount");
+
+const favoriteFilterBtn =
+    document.getElementById("favoriteFilterBtn");
+
+const toast =
+    document.getElementById("toast");
+
+const clipInput =
+    document.getElementById("clipInput");
+
+let selectedGames =
+    JSON.parse(
+        localStorage.getItem("selectedGames") || "[]"
+    );
+
+let favoriteGames =
+    JSON.parse(
+        localStorage.getItem("favoriteGames") || "[]"
+    );
+
+let friends =
+    JSON.parse(
+        localStorage.getItem("friends") || "[]"
+    );
+
+let groups =
+    JSON.parse(
+        localStorage.getItem("groups") || "[]"
+    );
+
+let gamerAccounts =
+    JSON.parse(localStorage.getItem("gamerhubAccounts") || "[]");
+
+let savedAccount =
+    JSON.parse(localStorage.getItem("gamehubCurrentAccount") || "null");
+
+/* Migrate the old name-only account from the previous version. */
+if(typeof savedAccount === "string") {
+    savedAccount = {
+        username: savedAccount,
+        email: "",
+        provider: "legacy",
+        connectedPlatforms: [],
+        createdAt: Date.now()
+    };
+    localStorage.setItem("gamehubCurrentAccount", JSON.stringify(savedAccount));
+}
+
+let connectedPlatforms =
+    JSON.parse(localStorage.getItem("gamerhubConnectedPlatforms") || "[]");
+
+let showingFavorites = false;
+
+
+/* =====================================================
+   GRADIENTS
+===================================================== */
+
+const gradients = [
+    "linear-gradient(135deg,#111,#555)",
+    "linear-gradient(135deg,#222,#777)",
+    "linear-gradient(135deg,#181818,#888)",
+    "linear-gradient(135deg,#333,#999)",
+    "linear-gradient(135deg,#101010,#666)",
+    "linear-gradient(135deg,#252525,#aaa)"
+];
+
+
+/* =====================================================
+   TOAST
+===================================================== */
+
+let toastTimer;
+
+function showToast(message) {
+
+    toast.textContent = message;
+
+    toast.classList.add("show");
+
+    clearTimeout(toastTimer);
+
+    toastTimer = setTimeout(() => {
+
+        toast.classList.remove("show");
+
+    },2500);
+}
+
+
+/* =====================================================
+   HTML ESCAPE
+===================================================== */
+
+function escapeHtml(text) {
+
+    return text
+        .replace(/&/g,"&amp;")
+        .replace(/</g,"&lt;")
+        .replace(/>/g,"&gt;")
+        .replace(/"/g,"&quot;")
+        .replace(/'/g,"&#039;");
+}
+
+
+/* =====================================================
+   CATEGORY
+===================================================== */
+
+function categoryName(category) {
+
+    if(category === "FPS")
+        return "Competitive FPS / PvP";
+
+    if(category === "MOBA")
+        return "MOBA / Strategy";
+
+    if(category === "Fighting")
+        return "Fighting / Brawler";
+
+    if(category === "Sports")
+        return "Sports / Racing";
+
+    return category;
+}
+
+
+/* =====================================================
+   STAR SVG
+===================================================== */
+
+function starSVG() {
+
+    return `
+        <svg
+            viewBox="0 0 24 24"
+            fill="currentColor"
+        >
+            <path
+                d="M12 2.5
+                   l2.95 5.98
+                   6.6 .96
+                   -4.77 4.65
+                   1.13 6.57
+                   L12 17.56
+                   6.09 20.66
+                   7.22 14.09
+                   2.45 9.44
+                   9.05 8.48
+                   Z"
+            />
+        </svg>
+    `;
+}
+
+
+/* =====================================================
+   RENDER GAMES
+===================================================== */
+
+function renderGames() {
+
+    const search =
+        searchInput.value
+            .trim()
+            .toLowerCase();
+
+    const category =
+        categoryFilter.value;
+
+
+    const filtered =
+        games.filter((game,index) => {
+
+            const name =
+                game[0].toLowerCase();
+
+            const matchesSearch =
+                name.includes(search);
+
+            const matchesCategory =
+                category === "all" ||
+                game[1] === category;
+
+            const matchesFavorites =
+                !showingFavorites ||
+                favoriteGames.includes(game[0]);
+
+            return (
+                matchesSearch &&
+                matchesCategory &&
+                matchesFavorites
+            );
+        });
+
+
+    gameGrid.innerHTML = "";
+
+
+    filtered.forEach((game) => {
+
+        const number =
+            games.indexOf(game) + 1;
+
+        const name = game[0];
+        const category = game[1];
+        const platforms = game[2];
+        const icon = game[3];
+
+        const selected =
+            selectedGames.includes(name);
+
+        const favorite =
+            favoriteGames.includes(name);
+
+
+        const card =
+            document.createElement("article");
+
+        card.className =
+            "game-card" +
+            (selected ? " selected" : "");
+
+
+        card.style.setProperty(
+            "--game-gradient",
+            gradients[number % gradients.length]
+        );
+
+
+        card.innerHTML = `
+
+            <button
+                class="favorite-btn ${favorite ? "active" : ""}"
+                data-favorite="${escapeHtml(name)}"
+                aria-label="Favorite ${escapeHtml(name)}"
+                title="Favorite"
+            >
+                ${starSVG()}
+            </button>
+
+
+            <div class="game-icon">
+                ${escapeHtml(icon)}
+            </div>
+
+
+            <div class="game-info">
+
+                <div class="game-number">
+                    GAME ${String(number).padStart(2,"0")}
+                </div>
+
+                <div class="game-name">
+                    ${escapeHtml(name)}
+                </div>
+
+                <div class="game-category">
+                    ${categoryName(category)}
+                </div>
+
+            </div>
+
+
+            <div class="platforms">
+
+                ${platforms.map(platform => `
+
+                    <span class="platform">
+                        ${escapeHtml(platform)}
+                    </span>
+
+                `).join("")}
+
+            </div>
+
+
+            <div class="game-actions">
+
+                <button
+                    class="select-game"
+                    data-select="${escapeHtml(name)}"
+                >
+                    ${selected ? "Selected ✓" : "Choose"}
+                </button>
+
+                <button
+                    class="upload-game"
+                    data-upload="${escapeHtml(name)}"
+                >
+                    Clip
+                </button>
+
+                <button
+                    class="share-game"
+                    data-share="${escapeHtml(name)}"
+                >
+                    Share
+                </button>
+
+            </div>
+        `;
+
+
+        gameGrid.appendChild(card);
+
+    });
+
+
+    gameCount.textContent =
+        `${filtered.length} of ${games.length} games`;
+
+
+    favoriteCount.textContent =
+        `${favoriteGames.length} favorite ${
+            favoriteGames.length === 1
+            ? "game"
+            : "games"
+        }`;
+}
+
+
+/* =====================================================
+   GAME EVENTS
+===================================================== */
+
+gameGrid.addEventListener(
+    "click",
+    event => {
+
+        /* FAVORITE */
+
+        const favoriteBtn =
+            event.target.closest(
+                "[data-favorite]"
+            );
+
+        if(favoriteBtn) {
+
+            const name =
+                favoriteBtn.dataset.favorite;
+
+
+            if(favoriteGames.includes(name)) {
+
+                favoriteGames =
+                    favoriteGames.filter(
+                        game => game !== name
+                    );
+
+                showToast(
+                    `${name} removed from favorites.`
+                );
+
+            } else {
+
+                favoriteGames.push(name);
+
+                showToast(
+                    `${name} added to favorites ⭐`
+                );
+            }
+
+
+            localStorage.setItem(
+                "favoriteGames",
+                JSON.stringify(favoriteGames)
+            );
+
+            renderGames();
+
+            return;
+        }
+
+
+        /* SELECT */
+
+        const selectBtn =
+            event.target.closest(
+                "[data-select]"
+            );
+
+        if(selectBtn) {
+
+            const name =
+                selectBtn.dataset.select;
+
+
+            if(selectedGames.includes(name)) {
+
+                selectedGames =
+                    selectedGames.filter(
+                        game => game !== name
+                    );
+
+                showToast(
+                    `${name} removed from your games.`
+                );
+
+            } else {
+
+                selectedGames.push(name);
+
+                showToast(
+                    `${name} added to your games!`
+                );
+            }
+
+
+            localStorage.setItem(
+                "selectedGames",
+                JSON.stringify(selectedGames)
+            );
+
+            renderGames();
+
+            return;
+        }
+
+
+        /* UPLOAD */
+
+        const uploadBtn =
+            event.target.closest(
+                "[data-upload]"
+            );
+
+        if(uploadBtn) {
+
+            const name =
+                uploadBtn.dataset.upload;
+
+            clipInput.dataset.game =
+                name;
+
+            clipInput.click();
+
+            return;
+        }
+
+
+        /* SHARE */
+
+        const shareBtn =
+            event.target.closest(
+                "[data-share]"
+            );
+
+        if(shareBtn) {
+
+            shareGame(
+                shareBtn.dataset.share
+            );
+        }
+    }
+);
+
+
+/* =====================================================
+   SHARE GAME
+===================================================== */
+
+async function shareGame(name) {
+
+    const text =
+        `Check out ${name} on GameHub!`;
+
+    const url =
+        window.location.href;
+
+
+    if(navigator.share) {
+
+        try {
+
+            await navigator.share({
+                title: "GameHub",
+                text: text,
+                url: url
+            });
+
+        } catch(error) {
+            /* User cancelled */
+        }
+
+    } else {
+
+        try {
+
+            await navigator.clipboard.writeText(
+                `${text} ${url}`
+            );
+
+            showToast(
+                "Game link copied!"
+            );
+
+        } catch(error) {
+
+            showToast(
+                "Sharing is not supported here."
+            );
+        }
+    }
+}
+
+
+/* =====================================================
+   CLIP
+===================================================== */
+
+clipInput.addEventListener(
+    "change",
+    () => {
+
+        if(!clipInput.files.length)
+            return;
+
+        const file =
+            clipInput.files[0];
+
+        const game =
+            clipInput.dataset.game;
+
+
+        showToast(
+            `Clip selected for ${game}: ${file.name}`
+        );
+
+
+        /*
+            This selects the video locally.
+
+            A real public upload requires
+            a backend/storage service.
+        */
+    }
+);
+
+
+/* =====================================================
+   FAVORITE FILTER
+===================================================== */
+
+favoriteFilterBtn.addEventListener(
+    "click",
+    () => {
+
+        showingFavorites =
+            !showingFavorites;
+
+
+        favoriteFilterBtn.textContent =
+            showingFavorites
+            ? "Show All Games"
+            : "Show Favorites";
+
+
+        renderGames();
+    }
+);
+
+
+function showFavoriteGames() {
+
+    accountMenu.classList.remove("show");
+
+    document
+        .getElementById("games")
+        .scrollIntoView({
+            behavior: "smooth"
+        });
+
+
+    showingFavorites = true;
+
+    favoriteFilterBtn.textContent =
+        "Show All Games";
+
+    renderGames();
+}
+
+
+/* =====================================================
+   SEARCH
+===================================================== */
+
+searchInput.addEventListener(
+    "input",
+    renderGames
+);
+
+categoryFilter.addEventListener(
+    "change",
+    renderGames
+);
+
+
+/* =====================================================
+   THEME
+===================================================== */
+
+const themeBtn =
+    document.getElementById("themeBtn");
+
+const themeIcon =
+    document.getElementById("themeIcon");
+
+
+function setTheme(dark) {
+
+    document.body.classList.toggle(
+        "dark",
+        dark
+    );
+
+
+    if(dark) {
+
+        themeIcon.innerHTML = `
+
+            <circle
+                cx="12"
+                cy="12"
+                r="4"
+            />
+
+            <path d="M12 2v2"/>
+            <path d="M12 20v2"/>
+            <path d="M4.93 4.93l1.41 1.41"/>
+            <path d="M17.66 17.66l1.41 1.41"/>
+            <path d="M2 12h2"/>
+            <path d="M20 12h2"/>
+            <path d="M6.34 17.66l-1.41 1.41"/>
+            <path d="M19.07 4.93l-1.41 1.41"/>
+
+        `;
+
+    } else {
+
+        themeIcon.innerHTML = `
+
+            <path
+                d="M21 12.79A9 9 0 1 1 11.21 3
+                   7 7 0 0 0 21 12.79Z"
+            />
+
+        `;
+    }
+
+
+    localStorage.setItem(
+        "gamehubTheme",
+        dark ? "dark" : "light"
+    );
+}
+
+
+themeBtn.addEventListener(
+    "click",
+    () => {
+
+        setTheme(
+            !document.body.classList.contains("dark")
+        );
+
+    }
+);
+
+
+if(
+    localStorage.getItem("gamehubTheme")
+    === "dark"
+) {
+
+    setTheme(true);
+
+} else {
+
+    setTheme(false);
+}
+
+
+/* =====================================================
+   CONNECTED PLATFORM DEMO DATA
+===================================================== */
+
+const platformLibrary = {
+
+    "Steam": [
+        {game:"Counter-Strike 2",hours:"846 hrs",rank:"Premier"},
+        {game:"Rocket League",hours:"421 hrs",rank:"Champion"},
+        {game:"Minecraft",hours:"315 hrs",rank:"—"}
+    ],
+
+    "Epic Games": [
+        {game:"Fortnite",hours:"310 hrs",rank:"Diamond"},
+        {game:"Rocket League",hours:"188 hrs",rank:"Champion"}
+    ],
+
+    "Riot Games": [
+        {game:"VALORANT",hours:"246 hrs",rank:"Platinum"},
+        {game:"League of Legends",hours:"198 hrs",rank:"Gold"}
+    ],
+
+    "Xbox": [
+        {game:"Forza Horizon 5",hours:"124 hrs",rank:"—"},
+        {game:"Halo Infinite",hours:"87 hrs",rank:"Platinum"}
+    ],
+
+    "PlayStation": [
+        {game:"TEKKEN 8",hours:"92 hrs",rank:"Ranked"},
+        {game:"Gran Turismo 7",hours:"74 hrs",rank:"—"}
+    ],
+
+    "Discord": []
+};
+
+function persistAccountState(){
+    localStorage.setItem("gamerhubAccounts", JSON.stringify(gamerAccounts));
+
+    if(savedAccount) {
+        localStorage.setItem("gamehubCurrentAccount", JSON.stringify(savedAccount));
+    } else {
+        localStorage.removeItem("gamehubCurrentAccount");
+    }
+
+    localStorage.setItem(
+        "gamerhubConnectedPlatforms",
+        JSON.stringify(connectedPlatforms)
+    );
+}
+
+function normalizeUsername(value){
+    return value.trim().toLowerCase();
+}
+
+function usernameTaken(username){
+    const normalized = normalizeUsername(username);
+    return gamerAccounts.some(
+        account => normalizeUsername(account.username) === normalized
+    );
+}
+
+function emailTaken(email){
+    const normalized = email.trim().toLowerCase();
+    return gamerAccounts.some(
+        account => account.email && account.email.toLowerCase() === normalized
+    );
+}
+
+function getInitialForAccount(account){
+    return (account?.username || "G").charAt(0).toUpperCase();
+}
+
+function updateGamingProfile(){
+
+    const name = savedAccount?.username || "Guest";
+    const email = savedAccount?.email || "Create an account to build your profile.";
+    const avatar = document.getElementById("profileAvatar");
+    const displayName = document.getElementById("profileDisplayName");
+    const displayEmail = document.getElementById("profileDisplayEmail");
+    const state = document.getElementById("profileAccountState");
+    const count = document.getElementById("connectionCount");
+    const connectedBox = document.getElementById("connectedPlatforms");
+    const library = document.getElementById("profileLibrary");
+
+    avatar.textContent = getInitialForAccount(savedAccount);
+    displayName.textContent = name;
+    displayEmail.textContent = email;
+
+    if(!savedAccount){
+        state.textContent = "No GamerHub account is connected. Create one from the account menu.";
+    } else {
+        state.textContent = "GamerHub account active. Connect your gaming platforms below.";
+    }
+
+    count.textContent = `${connectedPlatforms.length} connected`;
+    connectedBox.innerHTML = "";
+
+    connectedPlatforms.forEach(platform => {
+        const pill = document.createElement("div");
+        pill.className = "connected-pill";
+        pill.textContent = `✓ ${platform}`;
+        connectedBox.appendChild(pill);
+    });
+
+    document.querySelectorAll("[data-connect]").forEach(button => {
+        const platform = button.dataset.connect;
+        const connected = connectedPlatforms.includes(platform);
+
+        button.classList.toggle("connected", connected);
+        button.textContent = connected ? `✓ ${platform}` : platform;
+    });
+
+    library.innerHTML = "";
+
+    const libraryGames = connectedPlatforms.flatMap(platform =>
+        (platformLibrary[platform] || []).map(item => ({...item, platform}))
+    );
+
+    const uniqueGames = [];
+    const seen = new Set();
+
+    libraryGames.forEach(item => {
+        const key = item.game.toLowerCase();
+        if(!seen.has(key)) {
+            seen.add(key);
+            uniqueGames.push(item);
+        }
+    });
+
+    if(uniqueGames.length === 0){
+        library.innerHTML = `
+            <div class="profile-empty">
+                Connect Steam, Epic Games, Riot Games, Xbox or PlayStation
+                and your connected library data will appear here.
+            </div>
+        `;
+        return;
+    }
+
+    uniqueGames.forEach(item => {
+        const card = document.createElement("div");
+        card.className = "profile-library-card";
+        card.innerHTML = `
+            <div class="profile-game-top">
+                <strong>${escapeHtml(item.game)}</strong>
+                <span class="profile-platform">${escapeHtml(item.platform)}</span>
+            </div>
+            <div class="profile-stats">
+                <div class="profile-stat">
+                    <span>PLAYTIME</span>
+                    <strong>${escapeHtml(item.hours)}</strong>
+                </div>
+                <div class="profile-stat">
+                    <span>RANK</span>
+                    <strong>${escapeHtml(item.rank)}</strong>
+                </div>
+            </div>
+        `;
+        library.appendChild(card);
+    });
+}
+
+function openAccountModal(){
+    document.getElementById("accountModal").classList.add("show");
+    document.getElementById("accountMenu").classList.remove("show");
+    setTimeout(() => document.getElementById("accountUsernameInput").focus(), 80);
+}
+
+function closeAccountModal(){
+    document.getElementById("accountModal").classList.remove("show");
+}
+
+function accountFormMessage(message, good=false){
+    const box = document.getElementById("accountFormStatus");
+    box.textContent = message;
+    box.className = "account-form-status " + (good ? "good" : "bad");
+}
+
+function usernameMessage(){
+    const input = document.getElementById("accountUsernameInput");
+    const box = document.getElementById("usernameCheck");
+    const value = input.value.trim();
+
+    if(!value){
+        box.textContent = "";
+        box.className = "account-form-status";
+        return;
+    }
+
+    if(usernameTaken(value)){
+        box.textContent = "That username is already taken.";
+        box.className = "account-form-status bad";
+    } else {
+        box.textContent = "Username is available.";
+        box.className = "account-form-status good";
+    }
+}
+
+document.getElementById("accountUsernameInput").addEventListener("input", usernameMessage);
+
+document.getElementById("closeAccountModal").addEventListener("click", closeAccountModal);
+
+document.getElementById("accountModal").addEventListener("click", event => {
+    if(event.target.id === "accountModal") closeAccountModal();
+});
+
+document.getElementById("createGamerAccount").addEventListener("click", async () => {
+    const username = document.getElementById("accountUsernameInput").value.trim();
+    const email = document.getElementById("accountEmailInput").value.trim();
+    const password = document.getElementById("accountPasswordInput").value;
+
+    if(username.length < 3){
+        accountFormMessage("Username must contain at least 3 characters.");
+        return;
+    }
+
+    if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)){
+        accountFormMessage("Enter a valid email address.");
+        return;
+    }
+
+    if(password.length < 8){
+        accountFormMessage("Password must contain at least 8 characters.");
+        return;
+    }
+
+    if(usernameTaken(username)){
+        accountFormMessage("That username is already taken.");
+        usernameMessage();
+        return;
+    }
+
+    if(emailTaken(email)){
+        accountFormMessage("That email is already registered.");
+        return;
+    }
+
+    /* Never store the plaintext password. A real app should hash it on the server. */
+    const passwordHash = await hashPassword(password);
+
+    const account = {
+        username,
+        email,
+        passwordHash,
+        provider:"email",
+        connectedPlatforms:[],
+        createdAt:Date.now()
+    };
+
+    gamerAccounts.push(account);
+    savedAccount = account;
+    connectedPlatforms = [];
+    persistAccountState();
+    updateAccountUI();
+    updateGamingProfile();
+    closeAccountModal();
+
+    document.getElementById("accountUsernameInput").value = "";
+    document.getElementById("accountEmailInput").value = "";
+    document.getElementById("accountPasswordInput").value = "";
+    document.getElementById("usernameCheck").textContent = "";
+    accountFormMessage("");
+
+    showToast(`Welcome to GamerHub, ${username}!`);
+});
+
+document.getElementById("googleAccountBtn").addEventListener("click", () => {
+    /*
+       Preview of the Google flow.
+       A real Google OAuth callback must provide the verified Google email/name.
+       We still enforce the same local username/email uniqueness rules here.
+    */
+    const googleName = prompt("Google display name (demo):");
+    if(!googleName || !googleName.trim()) return;
+
+    const googleEmail = prompt("Google email (demo):");
+    if(!googleEmail || !googleEmail.includes("@")){
+        showToast("Enter a valid Google email.");
+        return;
+    }
+
+    const username = googleName.trim();
+
+    if(usernameTaken(username)){
+        showToast("That GamerHub username is already taken.");
+        return;
+    }
+
+    if(emailTaken(googleEmail)){
+        showToast("That Google account is already linked to a GamerHub account.");
+        return;
+    }
+
+    const account = {
+        username,
+        email:googleEmail.trim(),
+        provider:"google",
+        connectedPlatforms:[],
+        createdAt:Date.now()
+    };
+
+    gamerAccounts.push(account);
+    savedAccount = account;
+    connectedPlatforms = [];
+    persistAccountState();
+    updateAccountUI();
+    updateGamingProfile();
+    closeAccountModal();
+
+    showToast(`Google account connected as ${username}.`);
+});
+
+async function hashPassword(password){
+    if(window.crypto?.subtle){
+        const data = new TextEncoder().encode(password);
+        const hash = await crypto.subtle.digest("SHA-256", data);
+        return Array.from(new Uint8Array(hash))
+            .map(byte => byte.toString(16).padStart(2,"0"))
+            .join("");
+    }
+
+    return "local-hash-" + btoa(unescape(encodeURIComponent(password)));
+}
+
+/* =====================================================
+   ACCOUNT
+===================================================== */
+
+const accountBtn =
+    document.getElementById("accountBtn");
+
+const accountMenu =
+    document.getElementById("accountMenu");
+
+const accountName =
+    document.getElementById("accountName");
+
+const accountStatus =
+    document.getElementById("accountStatus");
+
+const accountAction =
+    document.getElementById("accountAction");
+
+const accountIcon =
+    document.getElementById("accountIcon");
+
+const friendsPreview =
+    document.getElementById("friendsPreview");
+
+
+function updateAccountUI() {
+
+    if(savedAccount) {
+
+        accountName.textContent = savedAccount.username;
+
+        accountStatus.textContent =
+            savedAccount.email || "Gaming account";
+
+        accountAction.textContent = "Log Out";
+
+        accountIcon.innerHTML = `
+            <circle cx="12" cy="12" r="9" />
+            <path d="M8.5 10.5 Q12 14 15.5 10.5" />
+            <path d="M9 8.5h.01"/>
+            <path d="M15 8.5h.01"/>
+        `;
+
+    } else {
+
+        accountName.textContent = "Guest";
+        accountStatus.textContent = "No account added";
+        accountAction.textContent = "Create Account";
+
+        accountIcon.innerHTML = `
+            <circle cx="12" cy="8" r="4" />
+            <path d="M4 21c0-4 3.5-7 8-7 s8 3 8 7" />
+        `;
+    }
+
+    renderFriendsPreview();
+    updateGamingProfile();
+}
+
+
+accountBtn.addEventListener(
+    "click",
+    event => {
+        event.stopPropagation();
+        accountMenu.classList.toggle("show");
+    }
+);
+
+
+accountAction.addEventListener(
+    "click",
+    () => {
+
+        if(savedAccount) {
+
+            savedAccount = null;
+            connectedPlatforms = [];
+            persistAccountState();
+
+            updateAccountUI();
+
+            showToast("You have been logged out.");
+
+        } else {
+
+            openAccountModal();
+
+        }
+
+        accountMenu.classList.remove("show");
+    }
+);
+
+
+document.addEventListener(
+    "click",
+    event => {
+        if(!event.target.closest(".account-wrapper")) {
+            accountMenu.classList.remove("show");
+        }
+    }
+);
+
+
+document.getElementById("accountProfileButton").addEventListener("click", () => {
+    accountMenu.classList.remove("show");
+    document.getElementById("profile").scrollIntoView({behavior:"smooth"});
+});
+
+
+/* =====================================================
+   FRIENDS
+===================================================== */
+
+const friendInput =
+    document.getElementById("friendInput");
+
+const addFriendBtn =
+    document.getElementById("addFriendBtn");
+
+const friendList =
+    document.getElementById("friendList");
+
+
+function getInitials(name) {
+
+    const words =
+        name.trim().split(/\s+/);
+
+    if(words.length === 1)
+        return words[0]
+            .slice(0,2)
+            .toUpperCase();
+
+    return (
+        words[0][0] +
+        words[1][0]
+    ).toUpperCase();
+}
+
+
+function renderFriends() {
+
+    friendList.innerHTML = "";
+
+
+    if(friends.length === 0) {
+
+        friendList.innerHTML = `
+
+            <div
+                style="
+                    color:var(--muted);
+                    font-size:12px;
+                    padding:10px 0;
+                "
+            >
+                You don't have any friends yet.
+            </div>
+
+        `;
+
+        return;
+    }
+
+
+    friends.forEach(friend => {
+
+        const row =
+            document.createElement("div");
+
+        row.className =
+            "friend-list-item";
+
+
+        row.innerHTML = `
+
+            <div class="friend-user">
+
+                <div class="friend-large-avatar">
+                    ${escapeHtml(
+                        getInitials(friend)
+                    )}
+                </div>
+
+                <strong>
+                    ${escapeHtml(friend)}
+                </strong>
+
+            </div>
+
+
+            <button
+                class="remove-friend"
+                data-remove-friend="${escapeHtml(friend)}"
+            >
+                Remove
+            </button>
+
+        `;
+
+
+        friendList.appendChild(row);
+    });
+
+
+    renderFriendsPreview();
+}
+
+
+addFriendBtn.addEventListener(
+    "click",
+    addFriend
+);
+
+
+friendInput.addEventListener(
+    "keydown",
+    event => {
+
+        if(event.key === "Enter") {
+            addFriend();
+        }
+    }
+);
+
+
+function addFriend() {
+
+    const name =
+        friendInput.value.trim();
+
+
+    if(!name) {
+
+        showToast(
+            "Enter a gaming name first."
+        );
+
+        return;
+    }
+
+
+    if(friends.includes(name)) {
+
+        showToast(
+            "This friend is already added."
+        );
+
+        return;
+    }
+
+
+    friends.push(name);
+
+
+    localStorage.setItem(
+        "friends",
+        JSON.stringify(friends)
+    );
+
+
+    friendInput.value = "";
+
+
+    renderFriends();
+
+
+    showToast(
+        `${name} added to your friends!`
+    );
+}
+
+
+friendList.addEventListener(
+    "click",
+    event => {
+
+        const remove =
+            event.target.closest(
+                "[data-remove-friend]"
+            );
+
+
+        if(!remove)
+            return;
+
+
+        const name =
+            remove.dataset.removeFriend;
+
+
+        friends =
+            friends.filter(
+                friend => friend !== name
+            );
+
+
+        localStorage.setItem(
+            "friends",
+            JSON.stringify(friends)
+        );
+
+
+        renderFriends();
+
+        showToast(
+            `${name} removed.`
+        );
+    }
+);
+
+
+function renderFriendsPreview() {
+
+    friendsPreview.innerHTML = "";
+
+
+    if(friends.length === 0)
+        return;
+
+
+    friendsPreview.innerHTML = `
+
+        <div class="friends-preview-title">
+            FRIENDS · ${friends.length}
+        </div>
+
+    `;
+
+
+    friends.slice(0,3).forEach(friend => {
+
+        friendsPreview.innerHTML += `
+
+            <div class="friend-row">
+
+                <div class="friend-avatar">
+                    ${escapeHtml(
+                        getInitials(friend)
+                    )}
+                </div>
+
+                <div class="friend-name">
+                    ${escapeHtml(friend)}
+                </div>
+
+            </div>
+
+        `;
+    });
+
+
+    if(friends.length > 3) {
+
+        friendsPreview.innerHTML += `
+
+            <div
+                style="
+                    color:var(--muted);
+                    font-size:10px;
+                    margin-top:5px;
+                "
+            >
+                +${friends.length - 3} more friends
+            </div>
+
+        `;
+    }
+}
+
+
+function scrollToFriends() {
+
+    accountMenu.classList.remove("show");
+
+    document
+        .getElementById("friends")
+        .scrollIntoView({
+            behavior:"smooth"
+        });
+}
+
+
+/* =====================================================
+   CONNECT GAMING PLATFORMS
+===================================================== */
+
+document.querySelectorAll("[data-connect]").forEach(button => {
+
+    button.addEventListener("click", () => {
+
+        if(!savedAccount){
+            showToast("Create a GamerHub account first.");
+            openAccountModal();
+            return;
+        }
+
+        const platform = button.dataset.connect;
+
+        if(connectedPlatforms.includes(platform)){
+            connectedPlatforms = connectedPlatforms.filter(x => x !== platform);
+            showToast(`${platform} disconnected.`);
+        } else {
+            connectedPlatforms.push(platform);
+            showToast(`${platform} connected. Demo library data loaded.`);
+        }
+
+        savedAccount.connectedPlatforms = connectedPlatforms;
+        persistAccountState();
+        updateGamingProfile();
+    });
+});
+
+
+/* =====================================================
+   GROUPS
+===================================================== */
+
+const groupModal =
+    document.getElementById("groupModal");
+
+const createGroupBtn =
+    document.getElementById("createGroupBtn");
+
+const closeGroupModal =
+    document.getElementById("closeGroupModal");
+
+const saveGroupBtn =
+    document.getElementById("saveGroupBtn");
+
+const groupNameInput =
+    document.getElementById("groupNameInput");
+
+const groupsGrid =
+    document.getElementById("groupsGrid");
+
+
+createGroupBtn.addEventListener(
+    "click",
+    () => {
+
+        groupNameInput.value = "";
+
+        groupModal.classList.add("show");
+
+        setTimeout(() => {
+            groupNameInput.focus();
+        },100);
+    }
+);
+
+
+closeGroupModal.addEventListener(
+    "click",
+    closeGroup
+);
+
+
+groupModal.addEventListener(
+    "click",
+    event => {
+
+        if(event.target === groupModal) {
+            closeGroup();
+        }
+    }
+);
+
+
+function closeGroup() {
+
+    groupModal.classList.remove(
+        "show"
+    );
+}
+
+
+saveGroupBtn.addEventListener(
+    "click",
+    createGroup
+);
+
+
+groupNameInput.addEventListener(
+    "keydown",
+    event => {
+
+        if(event.key === "Enter") {
+            createGroup();
+        }
+    }
+);
+
+
+function createGroup() {
+
+    const name =
+        groupNameInput.value.trim();
+
+
+    if(!name) {
+
+        showToast(
+            "Enter a group name."
+        );
+
+        return;
+    }
+
+
+    const group = {
+
+        id: Date.now(),
+
+        name: name,
+
+        members: savedAccount
+            ? [savedAccount]
+            : ["You"]
+
+    };
+
+
+    groups.push(group);
+
+
+    localStorage.setItem(
+        "groups",
+        JSON.stringify(groups)
+    );
+
+
+    closeGroup();
+
+    renderGroups();
+
+    showToast(
+        `${name} created!`
+    );
+}
+
+
+function renderGroups() {
+
+    groupsGrid.innerHTML = "";
+
+
+    if(groups.length === 0) {
+
+        groupsGrid.innerHTML = `
+
+            <div
+                style="
+                    grid-column:1/-1;
+                    padding:40px;
+                    text-align:center;
+                    border:1px dashed var(--border);
+                    border-radius:20px;
+                    color:var(--muted);
+                "
+            >
+                You haven't created a group yet.
+                <br>
+                Create your first gaming group above.
+            </div>
+
+        `;
+
+        return;
+    }
+
+
+    groups.forEach(group => {
+
+        const card =
+            document.createElement("div");
+
+        card.className =
+            "group-card";
+
+
+        const members =
+            group.members || ["You"];
+
+
+        const memberHTML =
+            members
+                .slice(0,4)
+                .map(member => `
+
+                    <div
+                        class="member-dot"
+                        title="${escapeHtml(member)}"
+                    >
+                        ${escapeHtml(
+                            getInitials(member)
+                        )}
+                    </div>
+
+                `)
+                .join("");
+
+
+        card.innerHTML = `
+
+            <div class="group-icon">
+                ${escapeHtml(
+                    getInitials(group.name)
+                )}
+            </div>
+
+
+            <h3>
+                ${escapeHtml(group.name)}
+            </h3>
+
+
+            <p>
+                ${members.length}
+                ${members.length === 1
+                    ? "member"
+                    : "members"}
+            </p>
+
+
+            <div class="group-members">
+                ${memberHTML}
+            </div>
+
+
+            <div class="group-actions">
+
+                <button
+                    data-share-group="${group.id}"
+                >
+                    Share
+                </button>
+
+                <button
+                    data-delete-group="${group.id}"
+                >
+                    Delete
+                </button>
+
+            </div>
+
+        `;
+
+
+        groupsGrid.appendChild(card);
+    });
+}
+
+
+groupsGrid.addEventListener(
+    "click",
+    event => {
+
+        const share =
+            event.target.closest(
+                "[data-share-group]"
+            );
+
+
+        if(share) {
+
+            const group =
+                groups.find(
+                    g =>
+                    String(g.id) ===
+                    String(
+                        share.dataset.shareGroup
+                    )
+                );
+
+
+            if(group) {
+
+                shareGroup(group);
+            }
+
+            return;
+        }
+
+
+        const del =
+            event.target.closest(
+                "[data-delete-group]"
+            );
+
+
+        if(del) {
+
+            const id =
+                Number(
+                    del.dataset.deleteGroup
+                );
+
+
+            groups =
+                groups.filter(
+                    group =>
+                    group.id !== id
+                );
+
+
+            localStorage.setItem(
+                "groups",
+                JSON.stringify(groups)
+            );
+
+
+            renderGroups();
+
+            showToast(
+                "Group deleted."
+            );
+        }
+    }
+);
+
+
+/* =====================================================
+   SHARE GROUP
+===================================================== */
+
+async function shareGroup(group) {
+
+    const text =
+        `Join my GameHub group: ${group.name}`;
+
+    const url =
+        window.location.href;
+
+
+    if(navigator.share) {
+
+        try {
+
+            await navigator.share({
+
+                title:
+                    `GameHub - ${group.name}`,
+
+                text:
+                    text,
+
+                url:
+                    url
+            });
+
+        } catch(error) {
+
+            /* cancelled */
+        }
+
+    } else {
+
+        try {
+
+            await navigator.clipboard.writeText(
+                `${text} ${url}`
+            );
+
+            showToast(
+                "Group invite copied!"
+            );
+
+        } catch(error) {
+
+            showToast(
+                "Sharing is not supported here."
+            );
+        }
+    }
+}
+
+
+function scrollToGroups() {
+
+    accountMenu.classList.remove(
+        "show"
+    );
+
+    document
+        .getElementById("groups")
+        .scrollIntoView({
+            behavior:"smooth"
+        });
+}
+
+
+/* =====================================================
+   INITIALIZE
+===================================================== */
+
+updateAccountUI();
+
+renderGames();
+
+renderFriends();
+
+renderGroups();
+
+
+updateAccountUI();
+updateGamingProfile();
+
+</script>
+
+</body>
+</html>
